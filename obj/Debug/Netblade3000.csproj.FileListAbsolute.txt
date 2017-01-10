@@ -1,0 +1,6 @@
+c:\users\j\documents\visual studio 2015\Projects\Netblade3000\Netblade3000\bin\Debug\Netblade3000.exe.config
+c:\users\j\documents\visual studio 2015\Projects\Netblade3000\Netblade3000\bin\Debug\Netblade3000.exe
+c:\users\j\documents\visual studio 2015\Projects\Netblade3000\Netblade3000\bin\Debug\Netblade3000.pdb
+c:\users\j\documents\visual studio 2015\Projects\Netblade3000\Netblade3000\obj\Debug\Netblade3000.csprojResolveAssemblyReference.cache
+c:\users\j\documents\visual studio 2015\Projects\Netblade3000\Netblade3000\obj\Debug\Netblade3000.exe
+c:\users\j\documents\visual studio 2015\Projects\Netblade3000\Netblade3000\obj\Debug\Netblade3000.pdb
