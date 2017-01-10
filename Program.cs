@@ -9,27 +9,29 @@ namespace Netblade3000
 {
     class Program
     {
+        
         public bool hasKey = false;
         public bool hasGun = false;
 
         static void Main(string[] args)
         {
 
+            Program p = new Program();
             Console.WriteLine("WELCOME USER");
             Console.WriteLine("You see a door.");
             Console.WriteLine("Enter door? y/n");
             String enter1 = Console.ReadLine();
-            if (yesNo(enter1))
+            if (p.yesNo(enter1))
             {
                 Console.WriteLine("");
-                room1();
+                p.room1();
             }
             else
             {
                 Console.WriteLine("");
                 Console.WriteLine("There is no other way to go.");
                 Console.WriteLine("You begrudgingly open the door...");
-                room1();
+                p.room1();
             }
             
         }
@@ -39,7 +41,7 @@ namespace Netblade3000
         /// Player only has the option to leave the room.
         /// yes or no (y/n)
         /// </summary>
-        public static void room1()
+        public void room1()
         {
             Console.WriteLine("You see a door");
             Console.WriteLine("Enter door? y/n");
@@ -62,7 +64,7 @@ namespace Netblade3000
         /// The hallway.
         /// Player has options to go left, right, or straight.
         /// </summary>
-        public static void hall1()
+        public void hall1()
         {
             Console.WriteLine("You enter a hallway.");
             Console.WriteLine("There is a door to your left, right, and straight ahead is a glowing blue door.");
@@ -91,7 +93,11 @@ namespace Netblade3000
             }
         }
 
-        public static void room2()
+        /// <summary>
+        /// The guard encounter.
+        /// Player has the option to steal a gun, which will trigger the "hasGun" global.
+        /// </summary>
+        public void room2()
         {
             Console.WriteLine("A guard sleeps in front of security cam screens.");
             Console.WriteLine("You see a radgun clipped to his belt.");
@@ -102,12 +108,16 @@ namespace Netblade3000
                 Console.WriteLine("You reach to unclip the radgun from the guard's belt.");
                 Console.WriteLine("The guard snorts and turns in his chair");
                 Thread.Sleep(2000);
-                Console.WriteLine("He is still asleep. You quickly unclip the radgun and slide it into your coat.");
+                Console.WriteLine("He is still asleep.");
                 Thread.Sleep(1000);
-                Console.WriteLine("RECEIVED ITEM - RADGUN V3.5");
-                //hasGun = true;
+                Console.WriteLine("You quickly unclip the radgun and slide it into your coat.");
+                Thread.Sleep(1000);
+                Console.WriteLine("");
+                Console.WriteLine("*** RECEIVED ITEM - RADGUN V3.5 ***");
+                Console.WriteLine("");
+                hasGun = true;
                 Thread.Sleep(2000);
-                Console.WriteLine("Leave room?");
+                Console.WriteLine("Leave room? y/n");
                 String leaveRoom = Console.ReadLine();
                 if (yesNo(leaveRoom))
                 {
@@ -129,17 +139,17 @@ namespace Netblade3000
 
         }
 
-        public static void room3()
+        public void room3()
         {
             Console.WriteLine("Bad guy, key");
         }
 
-        public static void room4()
+        public void room4()
         {
             Console.WriteLine("Contains locked door.");
         }
 
-        public static bool yesNo(String inString)
+        public bool yesNo(String inString)
             {
             String yn = inString;
             if (yn == "Y" || yn == "y" || yn == "yes" || yn == "Yes")
@@ -158,7 +168,7 @@ namespace Netblade3000
             return false;
         }
 
-        public static char leftRightStraight(String inString)
+        public char leftRightStraight(String inString)
         {
             String lrs = inString;
             if (lrs == "l" || lrs == "L" || lrs == "left" || lrs == "Left")
