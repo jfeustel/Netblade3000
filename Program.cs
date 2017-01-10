@@ -30,6 +30,11 @@ namespace Netblade3000
             
         }
 
+        /// <summary>
+        /// The starting room.
+        /// Player only has the option to leave the room.
+        /// yes or no (y/n)
+        /// </summary>
         public static void room1()
         {
             Console.WriteLine("You see a door");
@@ -50,6 +55,10 @@ namespace Netblade3000
             }
         }
 
+        /// <summary>
+        /// The hallway.
+        /// Player has options to go left, right, or straight.
+        /// </summary>
         public static void hall1()
         {
             Console.WriteLine("You enter a hallway.");
@@ -58,9 +67,21 @@ namespace Netblade3000
             String enter3 = Console.ReadLine();
             if (leftRightStraight(enter3) == 'l')
             {
-
+                room2();
             }
-
+            if (leftRightStraight(enter3) == 'l')
+            {
+                room3();
+            }
+            if (leftRightStraight(enter3) == 'l')
+            {
+                room4();
+            }
+            if (leftRightStraight(enter3) == 'n')
+            {
+                Console.WriteLine("INVALID ENTRY.");
+                hall1();                   
+            }
         }
 
         public static void room2()
@@ -75,18 +96,18 @@ namespace Netblade3000
 
         public static void room4()
         {
-            Console.WriteLine("You see a door");
+            Console.WriteLine("Contains locked door.");
         }
 
         public static bool yesNo(String inString)
             {
             String yn = inString;
-            if (yn == "Y" || yn == "y")
+            if (yn == "Y" || yn == "y" || yn == "yes" || yn == "Yes")
             {
                 return true;
             }
 
-            else if (yn == "N" || yn == "n")
+            else if (yn == "N" || yn == "n" || yn == "no" || yn == "No")
             {
                 Console.WriteLine("YOU DIE");
                 return false;
