@@ -11,27 +11,52 @@ namespace Netblade3000
         static void Main(string[] args)
         {
             Console.WriteLine("WELCOME USER");
-            Console.WriteLine("YOU SEE A DOOR");
-            Console.WriteLine("ENTER DOOR? Y/N");
+            Console.WriteLine("You see a door.");
+            Console.WriteLine("Enter door? y/n");
             String enter1 = Console.ReadLine();
-            if (enter1 == "Y" || enter1 == "y")
+            if (yesNo(enter1))
             {
                 room1();
             }
-
-            else if(enter1 == "N" || enter1 == "n")
-            {
-                Console.WriteLine("YOU DIE");
-            }
-            else
-            {
-                Console.WriteLine("INVALID INPUT");
-            }
+            
         }
 
         public static void room1()
         {
             Console.WriteLine("You see a door");
+            Console.WriteLine("Enter door? y/n");
+            String enter2 = Console.ReadLine();
+            if (yesNo(enter2))
+            {
+                hall1();
+            }
+        }
+
+        public static void hall1()
+        {
+            Console.WriteLine("You enter a hallway.");
+            Console.WriteLine("There is a door to your left, right, and straight ahead.");
+
+        }
+
+        public static bool yesNo(String inString)
+            {
+            String yn = inString;
+            if (yn == "Y" || yn == "y")
+            {
+                return true;
+            }
+
+            else if (yn == "N" || yn == "n")
+            {
+                Console.WriteLine("YOU DIE");
+                return false;
+            }
+            else
+            {
+                Console.WriteLine("INVALID INPUT");
+            }
+            return false;
         }
     }
 }
