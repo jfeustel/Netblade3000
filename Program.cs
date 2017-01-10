@@ -17,8 +17,10 @@ namespace Netblade3000
         {
 
             Program p = new Program();
-            Console.WriteLine("WELCOME USER");
+            p.welcome();
+            Thread.Sleep(2000);
             Console.WriteLine("You see a door.");
+            Thread.Sleep(1000);
             Console.WriteLine("Enter door? y/n");
             String enter1 = Console.ReadLine();
             if (p.yesNo(enter1))
@@ -30,7 +32,9 @@ namespace Netblade3000
             {
                 Console.WriteLine("");
                 Console.WriteLine("There is no other way to go.");
+                Thread.Sleep(1000);
                 Console.WriteLine("You begrudgingly open the door...");
+                Thread.Sleep(1000);
                 p.room1();
             }
             
@@ -44,6 +48,7 @@ namespace Netblade3000
         public void room1()
         {
             Console.WriteLine("You see a door");
+            Thread.Sleep(1000);
             Console.WriteLine("Enter door? y/n");
             String enter2 = Console.ReadLine();
             if (yesNo(enter2))
@@ -54,8 +59,10 @@ namespace Netblade3000
             else
             {
                 Console.WriteLine("There is no other way to go.");
+                Thread.Sleep(1000);
                 Console.WriteLine("You begrudgingly open the door...");
                 Console.WriteLine("");
+                Thread.Sleep(1000);
                 hall1();
             }
         }
@@ -67,7 +74,9 @@ namespace Netblade3000
         public void hall1()
         {
             Console.WriteLine("You enter a hallway.");
+            Thread.Sleep(1000);
             Console.WriteLine("There is a door to your left, right, and straight ahead is a glowing blue door.");
+            Thread.Sleep(1000);
             Console.WriteLine("Which way? l/r/s.");
             String enter3 = Console.ReadLine();
             if (leftRightStraight(enter3) == 'l')
@@ -99,42 +108,58 @@ namespace Netblade3000
         /// </summary>
         public void room2()
         {
-            Console.WriteLine("A guard sleeps in front of security cam screens.");
-            Console.WriteLine("You see a radgun clipped to his belt.");
-            Console.WriteLine("Try to take the radgun? y/n");
-            String stealGun = Console.ReadLine();
-            if (yesNo(stealGun))
+            if (hasGun == true)
             {
-                Console.WriteLine("You reach to unclip the radgun from the guard's belt.");
-                Console.WriteLine("The guard snorts and turns in his chair");
-                Thread.Sleep(2000);
-                Console.WriteLine("He is still asleep.");
+                Console.WriteLine("The guard is still asleep.");
                 Thread.Sleep(1000);
-                Console.WriteLine("You quickly unclip the radgun and slide it into your coat.");
+                Console.WriteLine("You shouldn't test your luck.");
                 Thread.Sleep(1000);
-                Console.WriteLine("");
-                Console.WriteLine("*** RECEIVED ITEM - RADGUN V3.5 ***");
-                Console.WriteLine("");
-                hasGun = true;
-                Thread.Sleep(2000);
-                Console.WriteLine("Leave room? y/n");
-                String leaveRoom = Console.ReadLine();
-                if (yesNo(leaveRoom))
-                {
-                    hall1();
-                }
-                else
-                {
-                    Console.WriteLine("You should leave before he wakes up...");
-                    Thread.Sleep(2000);
-                    hall1();
-                }
+                hall1();
             }
             else
             {
-                Console.WriteLine("You slowly back out of the room...");
-                Thread.Sleep(2000);
-                hall1();
+                Console.WriteLine("A guard sleeps in front of security cam screens.");
+                Thread.Sleep(1000);
+                Console.WriteLine("You see a radgun clipped to his belt.");
+                Thread.Sleep(1000);
+                Console.WriteLine("Try to take the radgun? y/n");
+                String stealGun = Console.ReadLine();
+                if (yesNo(stealGun))
+                {
+                    Console.WriteLine("You reach to unclip the radgun from the guard's belt.");
+                    Thread.Sleep(2000);
+                    Console.WriteLine("The guard snorts and turns in his chair");
+                    Thread.Sleep(2000);
+                    Console.WriteLine("He is still asleep.");
+                    Thread.Sleep(2000);
+                    Console.WriteLine("You quickly unclip the radgun and slide it into your coat.");
+                    Thread.Sleep(2000);
+                    Console.WriteLine("");
+                    Console.WriteLine("***********************************");
+                    Console.WriteLine("*** RECEIVED ITEM - RADGUN V3.5 ***");
+                    Console.WriteLine("***********************************");
+                    Console.WriteLine("");
+                    hasGun = true;
+                    Thread.Sleep(2000);
+                    Console.WriteLine("Leave room? y/n");
+                    String leaveRoom = Console.ReadLine();
+                    if (yesNo(leaveRoom))
+                    {
+                        hall1();
+                    }
+                    else
+                    {
+                        Console.WriteLine("You should leave before he wakes up...");
+                        Thread.Sleep(2000);
+                        hall1();
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("You slowly back out of the room...");
+                    Thread.Sleep(2000);
+                    hall1();
+                }
             }
 
         }
@@ -187,6 +212,43 @@ namespace Netblade3000
             {
                 return 'n';
             }
+        }
+
+        public void welcome()
+        {
+            Console.WriteLine("*******************************************************************************");
+            Console.WriteLine("******************************** NETBLADE 3000 ********************************");
+            Console.WriteLine("*******************************************************************************");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Thread.Sleep(1000);
+            Console.Write("W");
+            Thread.Sleep(200);
+            Console.Write("E");
+            Thread.Sleep(200);
+            Console.Write("L");
+            Thread.Sleep(200);
+            Console.Write("C");
+            Thread.Sleep(200);
+            Console.Write("O");
+            Thread.Sleep(200);
+            Console.Write("M");
+            Thread.Sleep(200);
+            Console.Write("E");
+            Thread.Sleep(200);
+            Console.Write(" ");
+            Thread.Sleep(200);
+            Console.Write("U");
+            Thread.Sleep(200);
+            Console.Write("S");
+            Thread.Sleep(200);
+            Console.Write("E");
+            Thread.Sleep(200);
+            Console.Write("R");
+            Thread.Sleep(200);
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Thread.Sleep(1000);
         }
     }
 }
