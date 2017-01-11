@@ -12,11 +12,14 @@ namespace Netblade3000
         
         public bool hasKey = false;
         public bool hasGun = false;
+        public bool hasDataFile = false;
+        public bool hasMotorcycleKey = false;
 
         static void Main(string[] args)
         {
 
             Program p = new Program();
+            Thread.Sleep(4000);
             p.welcome();
             Thread.Sleep(2000);
             Console.WriteLine("You pull yourself out of a sleep pod.");
@@ -26,7 +29,7 @@ namespace Netblade3000
             Console.WriteLine("aside from a small terminal displaying vitals for the sleep pod.");
             Thread.Sleep(2000);
             Console.WriteLine("You see a door.");
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             Console.WriteLine("Enter door? y/n");
             String enter1 = Console.ReadLine();
             if (p.yesNo(enter1))
@@ -54,16 +57,17 @@ namespace Netblade3000
         public void room1()
         {
             Console.WriteLine("You're in some kind of com research lab.");
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             Console.WriteLine("The door you came through reads: ");
+            Thread.Sleep(2000);
             Console.WriteLine("AUTHORIZED PERSONNEL ONLY");
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             Console.WriteLine("The door terminal appears to have been disabled. The screen is black.");
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             Console.WriteLine("You see crates of nutrition capsules stacked along the walls.");
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             Console.WriteLine("There is only one door leading out.");
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             Console.WriteLine("Enter door? y/n");
             String enter2 = Console.ReadLine();
             if (yesNo(enter2))
@@ -192,7 +196,7 @@ namespace Netblade3000
             }
             else
             {
-                Console.WriteLine("You enter a room alive with the persistent whirring of computer fans");
+                Console.WriteLine("You enter a room alive with the persistent whirring of computer fans.");
                 Thread.Sleep(2000);
                 Console.WriteLine("A technician sits at a desk facing three glowing com screens.");
                 Thread.Sleep(2000);
@@ -200,30 +204,39 @@ namespace Netblade3000
                 Thread.Sleep(2000);
                 Console.WriteLine("as her hair is as black as her canvas motorbike jacket.");
                 Thread.Sleep(2000);
-                Console.WriteLine("You see an implant com protruding from the bottom of her skull");
+                Console.WriteLine("You see an implant com protruding from the bottom of her skull.");
                 Thread.Sleep(3000);
                 if (hasGun)
                 {
-                    Console.WriteLine("Shoot her?");
+                    Console.WriteLine("Shoot her? y/n");
                     String shoot = Console.ReadLine();
                     if (yesNo(shoot))
                     {
-                        Thread.Sleep(1000);
+                        Thread.Sleep(2000);
                         Console.WriteLine("The high pitched whine of the radgun cuts through the dull fan noise.");
-                        Thread.Sleep(1000);
+                        Thread.Sleep(2000);
                         Console.WriteLine("The technician's face crashes to her desk.");
-                        Thread.Sleep(1000);
-                        Console.WriteLine("Her implant com cable dangles lifelessly from her still head");
-                        Thread.Sleep(1000);
-                        Console.WriteLine("You search her pockets and find a key.");
+                        Thread.Sleep(2000);
+                        Console.WriteLine("Her implant com cable dangles lifelessly from her still head.");
+                        Thread.Sleep(2000);
+                        Console.WriteLine("You search her pockets and find a terminal key.");
                         Console.WriteLine("");
-                        Thread.Sleep(1000);
+                        Thread.Sleep(2000);
                         Console.WriteLine("***********************************");
                         Console.WriteLine("**** RECEIVED ITEM - BLUE KEY1 ****");
                         Console.WriteLine("***********************************");
+                        Thread.Sleep(2000);
+                        Console.WriteLine("");
+                        Console.WriteLine("Her other pocket contains a small motorbike key.");
+                        Console.WriteLine("");
+                        Thread.Sleep(2000);
+                        Console.WriteLine("***********************************");
+                        Console.WriteLine("**** RECEIVED ITEM - MOTO KEY *****");
+                        Console.WriteLine("***********************************");
                         Console.WriteLine("");
                         hasKey = true;
-                        Thread.Sleep(1000);
+                        hasMotorcycleKey = true;
+                        Thread.Sleep(2000);
                         Console.WriteLine("You should leave...");
                         Console.WriteLine("");
                         Thread.Sleep(1000);
@@ -232,7 +245,7 @@ namespace Netblade3000
                     else
                     {
                         Thread.Sleep(2000);
-                        Console.WriteLine("She swivels around to investigate your presence");
+                        Console.WriteLine("She swivels around to investigate your presence.");
                         Thread.Sleep(2000);
                         Console.WriteLine("\"You're...\"");
                         Thread.Sleep(2000);
@@ -244,17 +257,25 @@ namespace Netblade3000
                         Thread.Sleep(2000);
                         Console.WriteLine("\"I know this isn't a coincidence.\"");
                         Thread.Sleep(2000);
-                        Console.WriteLine("She shoots an uneasy glance to the door, and unplugs her implant com");
+                        Console.WriteLine("She shoots an uneasy glance to the door, and unplugs her implant com.");
                         Thread.Sleep(2000);
                         Console.WriteLine("\"Look, I've always supported your cause.\"");
                         Thread.Sleep(2000);
                         Console.WriteLine("\"You're going to get yourself killed, but it's at least noble.\"");
                         Thread.Sleep(2000);
-                        Console.WriteLine("\"Here, take this key. You're probably already too late, but good luck.\"");
+                        Console.WriteLine("\"Here, take this key. And this datafile might give you some... answers.\"");
+                        Thread.Sleep(2000);
+                        Console.WriteLine("\"You're probably already too late, but good luck.\"");
                         Thread.Sleep(2000);
                         Console.WriteLine("***********************************");
                         Console.WriteLine("**** RECEIVED ITEM - BLUE KEY1 ****");
                         Console.WriteLine("***********************************");
+                        Console.WriteLine("");
+                        Thread.Sleep(2000);
+                        Console.WriteLine("***********************************");
+                        Console.WriteLine("**** RECEIVED ITEM - DATA FILE ****");
+                        Console.WriteLine("***********************************");
+                        hasDataFile = true;
                         hasKey = true;
                         Thread.Sleep(2000);
                         Console.WriteLine("");
@@ -266,7 +287,7 @@ namespace Netblade3000
                     Console.WriteLine("You wish you had a radgun right about now...");
                     Console.WriteLine("");
                     Thread.Sleep(2000);
-                    Console.WriteLine("She swivels around to investigate your presence");
+                    Console.WriteLine("She swivels around to investigate your presence.");
                     Thread.Sleep(2000);
                     Console.WriteLine("\"You're...\"");
                     Thread.Sleep(2000);
@@ -274,21 +295,29 @@ namespace Netblade3000
                     Thread.Sleep(2000);
                     Console.WriteLine("\"I mean, I saw your vitals myself...\"");
                     Thread.Sleep(2000);
-                    Console.WriteLine("\"Well whoever got you out of that simu-freeze sure picked a good time\"");
+                    Console.WriteLine("\"Well whoever got you out of that simu-freeze sure picked a good time.\"");
                     Thread.Sleep(2000);
                     Console.WriteLine("\"I know this isn't a coincidence.\"");
                     Thread.Sleep(2000);
-                    Console.WriteLine("She shoots an uneasy glance to the door, and unplugs her implant com");
+                    Console.WriteLine("She shoots an uneasy glance to the door, and unplugs her implant com.");
                     Thread.Sleep(2000);
                     Console.WriteLine("\"Look, I've always supported your cause.\"");
                     Thread.Sleep(2000);
                     Console.WriteLine("\"You're going to get yourself killed, but it's at least noble.\"");
                     Thread.Sleep(2000);
-                    Console.WriteLine("\"Here, take this key. You're probably already too late, but good luck.\"");
+                    Console.WriteLine("\"Here, take this key. And this datafile might give you some... answers.\"");
+                    Thread.Sleep(2000);
+                    Console.WriteLine("\"You're probably already too late, but good luck.\"");
                     Thread.Sleep(2000);
                     Console.WriteLine("***********************************");
                     Console.WriteLine("**** RECEIVED ITEM - BLUE KEY1 ****");
                     Console.WriteLine("***********************************");
+                    Console.WriteLine("");
+                    Thread.Sleep(2000);
+                    Console.WriteLine("***********************************");
+                    Console.WriteLine("**** RECEIVED ITEM - DATA FILE ****");
+                    Console.WriteLine("***********************************");
+                    hasDataFile = true;
                     hasKey = true;
                     Thread.Sleep(2000);
                     Console.WriteLine("");
@@ -311,7 +340,7 @@ namespace Netblade3000
             Thread.Sleep(2000);
             Console.WriteLine("You look back to the Net3000 terminal.");
             Thread.Sleep(2000);
-            Console.WriteLine("Enter the Net?");
+            Console.WriteLine("Enter the Net? y/n");
             Thread.Sleep(2000);
             String enterNet = Console.ReadLine();
             if (yesNo(enterNet))
