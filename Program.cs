@@ -113,12 +113,13 @@ namespace Netblade3000
                 Console.WriteLine("The guard is still asleep.");
                 Thread.Sleep(1000);
                 Console.WriteLine("You shouldn't test your luck.");
+                Console.WriteLine("");
                 Thread.Sleep(1000);
                 hall1();
             }
             else
             {
-                Console.WriteLine("A guard sleeps in front of security cam screens.");
+                Console.WriteLine("A pasty white guard sleeps in front of security cam screens.");
                 Thread.Sleep(1000);
                 Console.WriteLine("You see a radgun clipped to his belt.");
                 Thread.Sleep(1000);
@@ -166,12 +167,90 @@ namespace Netblade3000
 
         public void room3()
         {
-            Console.WriteLine("Bad guy, key");
+            if (hasKey)
+            {
+                Console.WriteLine("There is nothing else worthwhile in this room.");
+                Console.WriteLine("");
+                hall1();
+            }
+            else
+            {
+                Console.WriteLine("You enter a room alive with the persistent whirring of computer fans");
+                Thread.Sleep(2000);
+                Console.WriteLine("A technician sits at a desk facing three glowing com screens.");
+                Thread.Sleep(2000);
+                Console.WriteLine("It's hard to tell if she moved when you entered,");
+                Thread.Sleep(1000);
+                Console.WriteLine("as her hair is as black as her canvas motorbike jacket.");
+                Thread.Sleep(1000);
+                Console.WriteLine("You see an implant com protruding from the bottom of her skull");
+                Thread.Sleep(3000);
+                Console.WriteLine("");
+                Console.WriteLine("You could probably pull off a radgun shot before she notices...");
+                Console.WriteLine("");
+                Thread.Sleep(2000);
+                Console.WriteLine("Shoot her?");
+                String shoot = Console.ReadLine();
+                if (yesNo(shoot))
+                {
+                    Thread.Sleep(1000);
+                    Console.WriteLine("The high pitched whine of the radgun cuts through the dull fan noise.");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("The technician's face crashes to her desk.");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Her implant com cable dangles lifelessly from her still head");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("You search her pockets and find a key.");
+                    Console.WriteLine("");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("***********************************");
+                    Console.WriteLine("**** RECEIVED ITEM - BLUE KEY1 ****");
+                    Console.WriteLine("***********************************");
+                    Console.WriteLine("");
+                    hasKey = true;
+                    Thread.Sleep(1000);
+                    Console.WriteLine("You should leave...");
+                    Console.WriteLine("");
+                    Thread.Sleep(1000);
+                    hall1();
+                }
+                else
+                {
+                    Thread.Sleep(1000);
+                    Console.WriteLine("She swivels around to investigate your presence");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("\"You're...\"");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("\"They said you were alive back there...\"");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("\"I mean, I saw your vitals myself...\"");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("\"Well whoever got you out of that simu-freeze sure picked a good time\"");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("\"I know this isn't a coincidence.\"");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("She shoots an uneasy glance to the door, and unplugs her implant com");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("\"Look, I've always supported your cause.\"");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("\"You're going to get yourself killed, but it's at least noble.\"");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("\"Here, take this key. You're probably already too late, but good luck.\"");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("***********************************");
+                    Console.WriteLine("**** RECEIVED ITEM - BLUE KEY1 ****");
+                    Console.WriteLine("***********************************");
+                    hasKey = true;
+                    Thread.Sleep(1000);
+                    Console.WriteLine("");
+                }
+            }
+
         }
 
         public void room4()
         {
-            Console.WriteLine("Contains locked door.");
+            Console.WriteLine("You open the glowing blue door.");
         }
 
         public bool yesNo(String inString)
@@ -248,7 +327,7 @@ namespace Netblade3000
             Thread.Sleep(200);
             Console.WriteLine("");
             Console.WriteLine("");
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
         }
     }
 }
